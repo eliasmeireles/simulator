@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row" id="formulario-container">
+    <form #form="ngForm" (ngSubmit)="cadastrar(form.value)" class="col s12" enctype="multipart/form-data">
+
+      <div class="row">
+        <div class="input-field col s12 l12">
+          <input name="nome" ngModel id="produto_nome" type="text">
+          <label for="produto_nome">Nome do Produto</label>
+        </div>
+      </div>
+
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Imagem</span>
+
+          <input name="imagem" ngModel (change)="onChange($event)" type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+      <button class="btn waves-effect  waves-green darken-1">Cadastrar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+</div>

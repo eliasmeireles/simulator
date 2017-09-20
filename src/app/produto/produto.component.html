@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div class="row produto-list">
+    <div class="col l3 m6 s12">
+      <div class="card l3">
+        <div class="card-image">
+          <img [src]="produto.imagemUrl">
+        </div>
+        <div class="card-content center-align">
+          {{produto.nome}}
+        </div>
+
+        <div class="card-action">
+          <div class="row">
+
+          <span class="col s6">
+
+          </span>
+            <div class="col s6">
+              <span class="teal-text">R${{produto.valor}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
