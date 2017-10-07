@@ -1,27 +1,40 @@
 <div class="container">
 
+    <h5 class="center">{{produto.nome}}</h5>
   <div class="row produto-list">
-    <div class="col l3 m6 s12">
-      <div class="card l3">
+    <div class="col m4 s12" selectedImageIndex="let index: number;">
+      <div class="card">
         <div class="card-image">
-          <img [src]="produto.imagemUrl">
-        </div>
-        <div class="card-content center-align">
-          {{produto.nome}}
+
+          <img style="width: 100%"
+               *ngIf="index == null" [src]="produto.imagens[0]">
+          <img style="width: 100%"
+               *ngIf="index != null" [src]="produto.imagens[index]">
         </div>
 
-        <div class="card-action">
-          <div class="row">
 
-          <span class="col s6">
-
-          </span>
-            <div class="col s6">
-              <span class="teal-text">R${{produto.valor}}</span>
-            </div>
-          </div>
-        </div>
+        <ul class="row">
+          <li *ngFor="let imagem of produto.imagens; let id = index" class="col l3 m3 s3 produto-preview"><img
+            style="width: 100%" src="{{imagem}}" (click)="index = id"></li>
+        </ul>
       </div>
     </div>
   </div>
+
+  <h4>Descricão do produto</h4>
+  <div *ngFor="let prog of produto.produtoPropagandas" class="produto-propaganda">
+    <h4 *ngIf="prog.titulo">{{prog.titulo}}</h4>
+    <img style="width: 100%" src="{{prog.imagem}}">
+  </div>
+
+
+  <ul class="collapsible" data-collapsible="accordion">
+    <li *ngFor="let ficha of produto.produtoDescricao">
+      <div class="collapsible-header"><h5>{{ficha.titulo}}</h5></div>
+      <div *ngFor="let desc of ficha.descricao" class="collapsible-body">
+        <span>{{desc.informacao}}</span>
+      </div>
+    </li>
+  </ul>
+
 </div>

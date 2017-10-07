@@ -16,6 +16,7 @@ import {ApiConfigModule} from './api-config/api-config.module';
 import {FileSaveModule} from './file-save/file-save.module';
 import {ProdutoTesteModule} from './produto-teste/produto-teste.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SelectedImageIndexDirective } from './selected-image-index.directive';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     CadastroComponent,
     UsuarioComponent,
     UsuarioCadastroComponent,
-    ProdutoListagemComponent
+    ProdutoListagemComponent,
+    SelectedImageIndexDirective
   ],
   imports: [
     BrowserModule,

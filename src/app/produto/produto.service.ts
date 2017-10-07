@@ -20,7 +20,7 @@ export class ProdutoService {
   listall(): Observable<ProdutoComponent[]> {
 
     return this.apiConfig.http
-      .get(this.apiConfig.baseUrl + 'produto/listall')
+      .get(this.apiConfig.baseUrl + 'produto/list')
       .map(res => res.json());
 
   }

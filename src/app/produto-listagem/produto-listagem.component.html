@@ -2,13 +2,13 @@
 
   <div class="row produto-list">
 
-    <div *ngFor="let produto of produtos" class="col l3 m6 s12">
+    <div *ngFor="let produto of produtos" class="col s2 m3">
 
       <a class="produto-view" [routerLink]="['/produto', produto.id]" (click)="getFullData(produto)">
 
-        <div class="card l3">
+        <div class="card">
           <div class="card-image">
-            <img [src]="produto.imagemUrl">
+            <img [src]="produto.imagens[0]">
           </div>
           <div class="card-content center-align">
             {{produto.nome}}
